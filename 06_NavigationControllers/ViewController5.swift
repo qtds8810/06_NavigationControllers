@@ -31,33 +31,31 @@ class ViewController5: UIViewController {
         var controllers = tmpControllers
         
         // 从导航控制器的堆栈中连续移除多个维护的控制器，推荐用这种方法，注意数组越界的问题，因此从最大的开始遍历，逐级往最小的移除
-//        for i in (1 ..< (controllers.count-1)).reversed() {
-//            controllers.remove(at: i)
-//            navigationController?.viewControllers = controllers
-//        }
-        
-        // 从导航控制器的堆栈中移除指定的控制器，推荐用这种方法
-        for (i, controller) in (controllers.enumerated()).reversed() {
-            if controller.isKind(of: ViewController4.classForCoder()) {
-                controllers.remove(at: i)
-                navigationController?.viewControllers = controllers
-            }
-//            if controller.isKind(of: ViewController3.classForCoder()) {
-//                controllers.remove(at: i)
-//                navigationController?.viewControllers = controllers
-//            }
-//            if controller.isKind(of: ViewController2.classForCoder()) {
-//                controllers.remove(at: i)
-//                navigationController?.viewControllers = controllers
-//            }
-            if controller.isKind(of: ViewController1.classForCoder()) {
-                controllers.remove(at: i)
-                navigationController?.viewControllers = controllers
-            }
+        for i in (1 ..< (controllers.count-1)).reversed() {
+            controllers.remove(at: i)
+            navigationController?.viewControllers = controllers
         }
+        
+//        // 从导航控制器的堆栈中移除指定的控制器，推荐用这种方法
+//        for (i, controller) in (controllers.enumerated()).reversed() {
+//            if controller.isKind(of: ViewController4.classForCoder()) {
+//                controllers.remove(at: i)
+//                navigationController?.viewControllers = controllers
+//            }
+////            if controller.isKind(of: ViewController3.classForCoder()) {
+////                controllers.remove(at: i)
+////                navigationController?.viewControllers = controllers
+////            }
+////            if controller.isKind(of: ViewController2.classForCoder()) {
+////                controllers.remove(at: i)
+////                navigationController?.viewControllers = controllers
+////            }
+//            if controller.isKind(of: ViewController1.classForCoder()) {
+//                controllers.remove(at: i)
+//                navigationController?.viewControllers = controllers
+//            }
+//        }
     }
-    
-    
     
     // MARK: - Action
     
